@@ -1,9 +1,10 @@
 {
-  "name": "budget_tracker",
+  "name": "budget_buddy",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "prisma generate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
