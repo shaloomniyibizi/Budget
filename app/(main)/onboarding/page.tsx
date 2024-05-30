@@ -8,9 +8,9 @@ import { revalidatePath } from 'next/cache';
 const OnboardingPage = async () => {
   const user = await currentUser();
 
-  if (!user) redirect('/login');
-
   const userInfo = await getUserById(user?.id as string);
+
+  if (!userInfo) redirect('/login');
 
   if (userInfo?.onboarded) {
     revalidatePath('/dashboard');
